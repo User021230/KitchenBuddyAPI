@@ -1,10 +1,18 @@
+using KitchenBuddyAPI.Data;
+using KitchenBuddyAPI.Models;
+using Microsoft.AspNetCore.JsonPatch; //*
+using Microsoft.AspNetCore.Mvc; 
+using Microsoft.EntityFrameworkCore;
+
+
 namespace KitchenBuddyAPI.Controllers;
+
 [ApiController]
 [Route("Recipe")]
 public class RecipeController : ControllerBase
 {
-    private readonly KitchenBuddyDBContext _context;
-    public RecipeController(KitchenBuddyDBContext context)
+    private readonly KitchenBuddyDbContext _context;
+    public RecipeController(KitchenBuddyDbContext context)
     {
         _context = context;
     }
@@ -26,7 +34,7 @@ public class RecipeController : ControllerBase
         }
         return Ok(recipe);
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> CreateRecipe(Recipe recipe)
     {
