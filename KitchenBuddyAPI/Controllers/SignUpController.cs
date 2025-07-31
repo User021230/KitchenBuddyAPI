@@ -25,7 +25,7 @@ public class SignUpController : ControllerBase
     }
 
     [HttpPost("signUp")]
-    public async Task<IActionResult> SignUp([FromBody] SignUpRequest request)
+    public async Task<IActionResult> SignUp([FromBody] SignUpRequest request) 
     {
         try
         {
