@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using KitchenBuddyAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using KitchenBuddyAPI.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace KitchenBuddyAPI.Controllers;
 
@@ -34,11 +35,17 @@ public class AuthController : ControllerBase
         if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
             return BadRequest("Username and password are required.");
 
-        var user = await _db.Users.FirstOrDefaultAsync(u => u.Username == request.Username && u.Password == request.Password);
+        // Find user by email (or username if you prefer)
+        var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == request.Username);
         if (user == null)
             return Unauthorized("Invalid credentials.");
 
-        var tokenString = GenerateJwtToken(user.Username, user.UserType);
+        var hasher = new PasswordHasher<User>();
+        var result = hasher.VerifyHashedPassword(user, user.PasswordHash, request.Password);
+        if (result == PasswordVerificationResult.Failed)
+            return Unauthorized("Invalid credentials.");
+
+        var tokenString = GenerateJwtToken(user.Email, user.Usertype);
         return Ok(new { token = tokenString });
     }
 
