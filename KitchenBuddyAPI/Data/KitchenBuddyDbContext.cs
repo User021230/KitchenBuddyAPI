@@ -7,8 +7,8 @@ public class KitchenBuddyDbContext : DbContext
 {
     public KitchenBuddyDbContext(DbContextOptions<KitchenBuddyDbContext> options) : base(options) { }
 
-    public DbSet<User> Users => Set<User>();
-    public DbSet<Recipe> Recipes => Set<Recipe>();
+    public DbSet<User> Users { get; set; }
+    public DbSet<Recipe> Recipes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
