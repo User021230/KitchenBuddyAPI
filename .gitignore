@@ -55,4 +55,3 @@ nunit-*.xml
 
 #Ignore sqllite db
 db.sqlite3
-KitchenBuddy.db
