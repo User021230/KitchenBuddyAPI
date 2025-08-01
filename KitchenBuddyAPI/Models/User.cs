@@ -29,6 +29,8 @@ public class User
     [Required]
     [StringLength(20)]
     public string Usertype { get; set; } = string.Empty; // e.g., "admin" or "customer"
+
+    public ICollection<Recipe> Recipes { get; set; }
     
     public bool IsEmailVerified { get; set; } = false;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

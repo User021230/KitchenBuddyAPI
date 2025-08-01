@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KitchenBuddyAPI.Migrations
 {
     [DbContext(typeof(KitchenBuddyDbContext))]
-    [Migration("20250731152910_InitialCreate")]
+    [Migration("20250801012610_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
