@@ -8,4 +8,10 @@ public class Recipe
     public required string Ingridients { get; set; }
     public required string Directions { get; set; }
     public required string NutritionalBenefits { get; set; }
+
+    // Foreign key
+    public int UserId { get; set; }
+
+    // Navigation property
+    public User User { get; set; }
 }
