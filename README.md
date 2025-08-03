@@ -22,6 +22,25 @@ This API allows to generate, store and edit Recipes
 
 # EndPoints
 
+### Authentication
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/auth/login` | User login with username/email and password |
+| `POST` | `/signUp/signUp` | Register new user account |
+
+### Recipe Management
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/recipes/generate` | Generate recipes from ingredients using AI |
+| `GET` | `/api/recipes` | Get all recipes |
+| `GET` | `/api/recipes/{id}` | Get recipe by ID |
+| `POST` | `/api/recipes` | Create new recipe |
+| `PUT` | `/api/recipes/{id}` | Update entire recipe |
+| `PATCH` | `/api/recipes/{id}` | Partially update recipe |
+| `DELETE` | `/api/recipes/{id}` | Delete recipe |
+
 # 🤖 OpenAI Integration
 The API uses structured prompts to ensure consistent, high-quality recipe generation:
 
