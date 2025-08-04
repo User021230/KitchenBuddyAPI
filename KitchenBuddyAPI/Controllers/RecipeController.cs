@@ -103,7 +103,7 @@ public class RecipeController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateRecipe(Recipe recipe)
     {
-        
+
         _context.Recipes.Add(recipe);
         await _context.SaveChangesAsync();
         return CreatedAtAction(nameof(GetRecipe), new { id = recipe.Id }, recipe);

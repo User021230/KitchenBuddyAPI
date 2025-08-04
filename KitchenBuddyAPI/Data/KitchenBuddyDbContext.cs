@@ -43,6 +43,11 @@ public class KitchenBuddyDbContext : DbContext
                 entity.Property(e => e.Ingridients).IsRequired();
                 entity.Property(e => e.Directions).IsRequired();
                 entity.Property(e => e.NutritionalBenefits).IsRequired();
+
+                 entity.HasOne(e => e.User)
+                        .WithMany(u => u.Recipes)
+                        .HasForeignKey(e => e.UserId)
+                        .OnDelete(DeleteBehavior.Cascade); 
             }
         );
     }
