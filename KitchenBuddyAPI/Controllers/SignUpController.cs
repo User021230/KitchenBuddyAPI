@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using Microsoft.VisualBasic;
 
 namespace KitchenBuddyAPI.Controllers;
 
@@ -57,7 +58,7 @@ public class SignUpController : ControllerBase
                 Surname = SanitizeInput(request.Surname),
                 Email = request.Email.ToLowerInvariant(),
                 Username = request.Username.ToLowerInvariant(),
-                Usertype = "customer", // Default user type
+                Usertype = request.Usertype.ToLower(), // Default user type
                 IsEmailVerified = false,
                 CreatedAt = DateTime.UtcNow
             };
@@ -167,7 +168,18 @@ public class SignUpController : ControllerBase
             errors.Add("Passwords do not match.");
         }
 
-        return (errors.Count == 0, errors);
+        //usertype Validation
+        bool IsValidUserype = (request.Usertype.ToLower().Equals("customer") || request.Usertype.ToLower().Equals("admin"));
+        if (string.IsNullOrWhiteSpace(request.Usertype))
+        {
+            errors.Add("User Type is required");
+        }
+        else if (!IsValidUserype)
+        {
+            errors.Add("User type must either be \"customer\" or \"admin\"");
+        }
+
+            return (errors.Count == 0, errors);
     }
 
     private bool IsValidEmail(string email)
@@ -220,4 +232,7 @@ public class SignUpRequest
     [Required]
     [Compare("Password", ErrorMessage = "Passwords do not match.")]
     public string ConfirmPassword { get; set; } = string.Empty;
+
+    [Required]
+    public string Usertype { get; set; } = string.Empty;
 }
