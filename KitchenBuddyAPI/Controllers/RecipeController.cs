@@ -51,7 +51,7 @@ public class RecipeController : ControllerBase
 
         var requestBody = new
         {
-            model = "gpt-4",
+            model = "gpt-3.5-turbo",
             messages = new[]
             {
                 new { role = "system", content = "You are a professional chef and nutritionist." },
