@@ -9,6 +9,7 @@ This API allows to generate, store and edit Recipes
 - ✅ Entity Framework Core + SQLite (or SQL Server)
 - ✅ JWT Authentication 
 - ✅ ASP.NET Core Web API
+- ✅ PostMan (API Documentation and Testing)
 
 ## 📦 Technologies Used
 
