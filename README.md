@@ -1,5 +1,6 @@
-# KitchenBuddyAPI
-This API allows to generate, store and edit Recipes
+#👩🏿‍🍳👩🏿‍🍳 KitchenBuddyAPI
+
+-A RESTful API that leverages AI to simulate a professional chef and nutritionist and tailor’s responses based on the provided ingredients
 
 ## 🚀 Features
 
