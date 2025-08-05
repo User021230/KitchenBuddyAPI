@@ -9,6 +9,7 @@ This API allows to generate, store and edit Recipes
 - ✅ Entity Framework Core + SQLite (or SQL Server)
 - ✅ JWT Authentication 
 - ✅ ASP.NET Core Web API
+- ✅ PostMan (API Documentation and Testing)
 
 ## 📦 Technologies Used
 
@@ -18,7 +19,7 @@ This API allows to generate, store and edit Recipes
 - SQLite / SQL Server
 - Swagger / Swashbuckle
 - LINQ
-- OpenAI API
+- DeepSeek AI API
 
 # EndPoints
 
@@ -41,7 +42,7 @@ This API allows to generate, store and edit Recipes
 | `PATCH` | `/api/recipes/{id}` | Partially update recipe |
 | `DELETE` | `/api/recipes/{id}` | Delete recipe |
 
-# 🤖 OpenAI Integration
+# 🤖 DeepSeek Integration
 The API uses structured prompts to ensure consistent, high-quality recipe generation:
 
 ## Prompt Engineering
