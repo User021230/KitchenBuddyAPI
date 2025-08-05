@@ -41,7 +41,7 @@ This API allows to generate, store and edit Recipes
 | `PATCH` | `/api/recipes/{id}` | Partially update recipe |
 | `DELETE` | `/api/recipes/{id}` | Delete recipe |
 
-# 🤖 OpenAI Integration
+# 🤖 DeepSeek Integration
 The API uses structured prompts to ensure consistent, high-quality recipe generation:
 
 ## Prompt Engineering
