@@ -46,12 +46,12 @@ public class RecipeController : ControllerBase
     [HttpPost("generate")]
     public async Task<IActionResult> GenerateRecipes([FromBody] RecipeRequest request)
     {
-        string apiKey = _config["OpenAI:ApiKey"];
+        string apiKey = _config["DeepSeek:ApiKey"];
         string prompt = GeneratePrompt(request.Ingredients);
 
         var requestBody = new
         {
-            model = "gpt-3.5-turbo",
+            model = "deepseek/deepseek-r1:free",
             messages = new[]
             {
                 new { role = "system", content = "You are a professional chef and nutritionist." },
@@ -62,13 +62,14 @@ public class RecipeController : ControllerBase
 
         _httpClient.DefaultRequestHeaders.Clear();
         _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+        _httpClient.DefaultRequestHeaders.Add("HTTP-Referer", "http://localhost:5108");
 
-        var response = await _httpClient.PostAsJsonAsync("https://api.openai.com/v1/chat/completions", requestBody);
+        var response = await _httpClient.PostAsJsonAsync("https://openrouter.ai/api/v1/chat/completions", requestBody);
 
         if (!response.IsSuccessStatusCode)
         {
             var error = await response.Content.ReadAsStringAsync();
-            return StatusCode(500, $"OpenAI API error: {error}");
+            return StatusCode(500, $"OpenRouter API error: {error}");
         }
 
         var result = await response.Content.ReadFromJsonAsync<OpenAIResponse>();
@@ -158,7 +159,7 @@ public class RecipeController : ControllerBase
         Generate 2 healthy and creative recipes using as many of these ingredients as possible.
 
         Each recipe must be a JSON object with:
-        - 'Ingredients' (as a single string),
+        - 'Ingredients' (string),
         - 'Directions' (string),
         - 'NutritionalBenefits' (string)
 
