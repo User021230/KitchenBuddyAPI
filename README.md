@@ -18,7 +18,7 @@ This API allows to generate, store and edit Recipes
 - SQLite / SQL Server
 - Swagger / Swashbuckle
 - LINQ
-- OpenAI API
+- DeepSeek AI API
 
 # EndPoints
 
