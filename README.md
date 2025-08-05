@@ -10,7 +10,7 @@
 - ✅ Entity Framework Core + SQLite (or SQL Server)
 - ✅ JWT Authentication 
 - ✅ ASP.NET Core Web API
-- ✅ PostMan (API Documentation and Testing)
+- ✅ Recipe Recommandations
 
 ## 📦 Technologies Used
 
@@ -21,6 +21,7 @@
 - Swagger / Swashbuckle
 - LINQ
 - DeepSeek AI API
+- PostMan (API Documentation and Testing)
 
 # EndPoints
 
