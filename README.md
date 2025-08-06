@@ -1,5 +1,6 @@
-# KitchenBuddyAPI
-This API allows to generate, store and edit Recipes
+# 👩🏿‍🍳👩🏿‍🍳 KitchenBuddyAPI
+
+-A RESTful API that leverages AI to simulate a professional chef and nutritionist and tailor’s responses based on the provided ingredients
 
 ## 🚀 Features
 
@@ -9,7 +10,7 @@ This API allows to generate, store and edit Recipes
 - ✅ Entity Framework Core + SQLite (or SQL Server)
 - ✅ JWT Authentication 
 - ✅ ASP.NET Core Web API
-- ✅ PostMan (API Documentation and Testing)
+- ✅ Recipe Recommandations
 
 ## 📦 Technologies Used
 
@@ -20,6 +21,7 @@ This API allows to generate, store and edit Recipes
 - Swagger / Swashbuckle
 - LINQ
 - DeepSeek AI API
+- PostMan (API Documentation and Testing)
 
 # EndPoints
 
