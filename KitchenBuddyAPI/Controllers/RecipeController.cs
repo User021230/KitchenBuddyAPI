@@ -4,7 +4,6 @@ using KitchenBuddyAPI.Models;
 using Microsoft.AspNetCore.JsonPatch; //*
 using Microsoft.AspNetCore.Mvc; 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 
 
 namespace KitchenBuddyAPI.Controllers;
@@ -102,7 +101,7 @@ public class RecipeController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateRecipe(Recipe recipe)
+    public async Task<IActionResult> CreateRecipe([FromBody] Recipe recipe)
     {
 
         _context.Recipes.Add(recipe);
@@ -159,11 +158,13 @@ public class RecipeController : ControllerBase
         Generate 2 healthy and creative recipes using as many of these ingredients as possible.
 
         Each recipe must be a JSON object with:
-        - 'Ingredients' (string),
-        - 'Directions' (string),
-        - 'NutritionalBenefits' (string)
+        - 'name' (string),
+        - 'ingredients' (string),
+        - 'directions' (string),
+        - 'nutritionalBenefits' (string)
 
-        Respond ONLY with a valid JSON array of 2 recipe objects.
+        Respond with as many valid JSON array of recipe objects.
+        no  '`'
         ";
     }
 }
