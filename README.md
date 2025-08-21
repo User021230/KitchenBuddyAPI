@@ -65,5 +65,4 @@ Sanitizes and validates generated content
 ## Token Management
 
 Optimizes prompts to minimize token usage
-Implements token counting and budget tracking
 Provides fallback responses for token limit errors
