@@ -17,7 +17,7 @@ namespace KitchenBuddyAPI.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Ingridients = table.Column<string>(type: "TEXT", nullable: false),
+                    Ingredients = table.Column<string>(type: "TEXT", nullable: false),
                     Directions = table.Column<string>(type: "TEXT", nullable: false),
                     NutritionalBenefits = table.Column<string>(type: "TEXT", nullable: false)
                 },

@@ -41,7 +41,7 @@ public class KitchenBuddyDbContext : DbContext
                 entity.HasKey(e => e.Id);
 
                 entity.Property(e => e.Name).IsRequired();
-                entity.Property(e => e.Ingridients).IsRequired();
+                entity.Property(e => e.Ingredients).IsRequired();
                 entity.Property(e => e.Directions).IsRequired();
                 entity.Property(e => e.NutritionalBenefits).IsRequired();
 

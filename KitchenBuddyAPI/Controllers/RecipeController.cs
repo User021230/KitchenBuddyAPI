@@ -155,7 +155,7 @@ public class RecipeController : ControllerBase
 
         Given the following ingredients: {ingList}
 
-        Generate 5 healthy and creative recipes using as many of these ingredients as possible.
+        Generate as many healthy and creative recipes as possible using the provided ingredients.
 
         Each recipe must be a JSON object with:
         - 'name' (string),
@@ -163,6 +163,7 @@ public class RecipeController : ControllerBase
         - 'directions' (string),
         - 'nutritionalBenefits' (string)
 
+        Respond with as many valid JSON array of recipe objects.
         no  '`'
         ";
     }
