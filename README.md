@@ -18,7 +18,6 @@
 - Entity Framework Core
 - C#
 - SQLite / SQL Server
-- Swagger / Swashbuckle
 - LINQ
 - DeepSeek AI API
 - PostMan (API Documentation and Testing)
